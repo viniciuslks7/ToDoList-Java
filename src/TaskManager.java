@@ -20,13 +20,43 @@ public class TaskManager {
         }
     }
 
-    public void listTasks() {
-        if (tasks.isEmpty()) {
-            System.out.println("Nenhuma tarefa cadastrada.");
+    public void removeTask(int index) {
+        if (index >= 0 && index < tasks.size()) {
+            tasks.remove(index);
         } else {
-            for (int i = 0; i < tasks.size(); i++) {
-                System.out.println((i + 1) + ". " + tasks.get(i));
+            System.out.println("Índice inválido!");
+        }
+    }
+
+    public void editTask(int index, String newDescription) {
+        if (index >= 0 && index < tasks.size()) {
+            tasks.get(index).setDescription(newDescription);
+        } else {
+            System.out.println("Índice inválido!");
+        }
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public List<Task> getCompletedTasks() {
+        List<Task> completedTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.isCompleted()) {
+                completedTasks.add(task);
             }
         }
+        return completedTasks;
+    }
+
+    public List<Task> getPendingTasks() {
+        List<Task> pendingTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (!task.isCompleted()) {
+                pendingTasks.add(task);
+            }
+        }
+        return pendingTasks;
     }
 }

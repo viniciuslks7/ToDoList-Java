@@ -36,7 +36,7 @@ Uma aplicação simples de lista de tarefas (**ToDo List**) desenvolvida em **Ja
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/ToDoList-Java.git
+   git clone https://github.com/viniciuslks7/ToDoList-Java.git
    cd ToDoList-Java
    ```
 
